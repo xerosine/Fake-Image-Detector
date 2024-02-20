@@ -1,0 +1,45 @@
+body {
+    background: linear-gradient(to right, #12c2e9, #c471ed, #f64f59);
+}
+.container {
+    height: 100vh;
+}
+.row-main {
+    height: 100%;
+}
+.h1-wrapper {
+    height: 9%;
+    text-align: center;
+}
+h1 {
+    font-family: "Anta", sans-serif;
+    color: #3b1b4b;
+    font-size: 1.8rem;
+}
+.landing-img-main {
+    height: 28%;
+}
+.img-wrapper {
+    height: 100%;
+    text-align: center;
+}
+img {
+    max-height: 100%;
+}
+.form-main {
+    height: 30%;
+}
+.form-main p {
+    font-size: 1.3rem;
+    font-family: "Anta", sans-serif;
+}
+input[type='file'] {
+    color: transparent;
+    
+}
+.pred-main {
+    height: 32%;
+}
+.pred-output {
+    text-align: center;
+}

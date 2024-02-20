@@ -1,2 +1,2 @@
-test/
-train/
+venv/
+*.h5

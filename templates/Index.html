@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fake Image Detector</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/bootstrap.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/style.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anta&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container pt-3">
+      <div
+        class="row row-main d-flex justify-content-center align-items-center"
+      >
+        <div class="col-12 h1-wrapper pt-3">
+          <h1>Image Validator</h1>
+        </div>
+        <div class="col-12 landing-img-main order-2">
+          <div class="img-wrapper">
+            <img
+              id="landing-img"
+              class="img-fluid mx-auto"
+              src="../static/images/upload-image-01.png"
+              alt="file upload image"
+            />
+          </div>
+        </div>
+        <div class="col-12 px-1 form-main order-3">
+          <div>
+            <div class="swiper pe-4 text-center">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide"><p>Beware of AI forgery</p></div>
+                <div class="swiper-slide"><p>Doubting some pictures?</p></div>
+                <div class="swiper-slide"><p>Afraid of being misled?</p></div>
+              </div>
+            </div>
+            <p class="ps-5 text-center">Verify your images</p>
+            <div>
+              <form action="/predict">
+                <label for="img">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-images" viewBox="0 0 16 16">
+                        <path d="M4.502 9a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+                        <path d="M14.002 13a2 2 0 0 1-2 2h-10a2 2 0 0 1-2-2V5A2 2 0 0 1 2 3a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v8a2 2 0 0 1-1.998 2M14 2H4a1 1 0 0 0-1 1h9.002a2 2 0 0 1 2 2v7A1 1 0 0 0 15 11V3a1 1 0 0 0-1-1M2.002 4a1 1 0 0 0-1 1v8l2.646-2.354a.5.5 0 0 1 .63-.062l2.66 1.773 3.71-3.71a.5.5 0 0 1 .577-.094l1.777 1.947V5a1 1 0 0 0-1-1z"/>
+                    </svg>
+                    Upload image</label>
+                <input
+                  type="file"
+                  enctype="multipart/form-data"
+                  name="img"
+                  id="img"
+                  class="form-control"
+                />
+                <button id="submit">Submit</button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 pred-main order-4">
+          <div class="row">
+            <div class="col pred-output">
+              <p class="pred-result">Dog</p>
+              <span id="dog-pred" class=""></span>
+            </div>
+            <div class="col pred-output">
+              <p class="pred-result">Cat</p>
+              <span id="cat-pred" class=""></span>
+            </div>
+          </div>
+          <div class="selected-img-wrapper">
+            <img id="selected-img" class="mb-3" src="" alt="selected image" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
